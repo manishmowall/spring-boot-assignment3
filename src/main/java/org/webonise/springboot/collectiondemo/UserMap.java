@@ -1,5 +1,6 @@
 package org.webonise.springboot.collectiondemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ public class UserMap {
     private final Set<User> userSet;
     private final Map<Integer, User> users;
 
+    @Autowired
     public UserMap(@Qualifier("getSetOfUsers") final Set<User> userSet, @Qualifier("getHashMap") final Map<Integer, User> users) {
         this.userSet = userSet;
         this.users = users;
